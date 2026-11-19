@@ -1589,10 +1589,10 @@ async function fetchRecordsFromSheet(silent){
    const modoRaw=pick(item,['modo']);
    const data=normDate(pick(item,['dataemissao','data']))||todayISO();
    if(id&&records.some(r=>r.id===id))return;
-   if(num&&records.some(r=>r.num&&r.num===num))return;
    const ae=keyAE(aluno,escola);
    if(existingAE.has(ae))return;
-   const nn=num||nextNum();if(!nn)return;
+   const numTaken=num&&records.some(r=>r.num===num);
+   const nn=(num&&!numTaken)?num:nextNum();if(!nn)return;
    const recId=(id&&!records.some(r=>r.id===id))?id:uniqueId();
    let fone=foneRaw;
    try{if(foneRaw&&phoneOk(foneRaw))fone=phoneNorm(foneRaw).fmt}catch(e){}
