@@ -152,8 +152,13 @@ dialog h3{margin:0 0 4px}dialog p{margin:0 0 14px;color:var(--mu);font-size:13px
  #printArea .cert:last-child{break-after:auto;page-break-after:auto}
  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
  #printArea .cert::before{display:none!important}
+ #printArea .cert{background:var(--paper)!important}
+ #printArea .cert .sh{display:none!important}
+ #printArea .cert .f1{border-image:none!important;border-color:var(--c1)!important;box-shadow:none!important}
  #printArea .cert .f3{box-shadow:none!important}
  #printArea .cert .cn svg,#printArea .cert .seal img,#printArea .cvseal img{filter:none!important}
+ #printArea .cert .yr,#printArea .cert .ttl{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;color:var(--c1)!important;-webkit-text-fill-color:var(--c1)!important}
+ #printArea .cert .nm{border-image:none!important;border-bottom-color:var(--c1)!important}
 }
 
 /* ============ CONVITES · interface ============ */
